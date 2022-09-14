@@ -18,11 +18,12 @@ public class DontForgetTheLyrics {
 	
 	public static void main(String[] args) {
 		// 4. Make a pop-up to explain the game.
-
+JOptionPane.showMessageDialog(null, "You will have to guess the rest of the song.");
 		// 5. Use the playSound method to play your song.
-
+playSound();
 		// 6. Make a pop-up for the player to type their answer.
-
+String guess = JOptionPane.showInputDialog("Type your answer");
+String answer;
 		// 7. If they answered correctly, tell them that they were right.
 
 		// 8. Otherwise, tell them they are wrong, and give them the answer.

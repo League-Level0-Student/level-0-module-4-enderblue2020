@@ -1,5 +1,7 @@
 package _02_boolean._5_googly_eyes;
 
+import java.awt.Color;
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -37,29 +39,41 @@ import processing.core.PImage;
  *    to the boundary. Put this code before you draw the pupils.
  */
 public class GooglyEyes extends PApplet {
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
-    
-    PImage face;
-    
-    @Override
-    public void settings() {
-        size(WIDTH, HEIGHT);
-    }
-    
-    @Override
-    public void setup() {
-    	face = loadImage("Face.jpeg");
-    	face.resize(WIDTH, HEIGHT);
-    }
+	static final int WIDTH = 800;
+	static final int HEIGHT = 600;
 
-    @Override
-    public void draw() {
-    	background(face);
-ellipse(230,210,100,100);
-    }
+	PImage face;
 
-    static public void main(String[] args) {
-        PApplet.main(GooglyEyes.class.getName());
-    }
+	@Override
+	public void settings() {
+		size(WIDTH, HEIGHT);
+	}
+
+	@Override
+	public void setup() {
+		face = loadImage("Face.jpeg");
+		face.resize(WIDTH, HEIGHT);
+	}
+
+	@Override
+	public void draw() {
+		background(face);
+		fill(250);
+		ellipse(560, 210, 100, 100);
+		ellipse(230, 210, 100, 100);
+		if(mouseX < 200) {
+			mouseX = 199;
+		}
+		if(mouseY < 190) {
+			mouseY = 189;
+		}
+		fill(0);
+		ellipse(mouseX, mouseY, 25, 25);
+		ellipse(mouseX,mouseY,25,25);
+		
+	}
+
+	static public void main(String[] args) {
+		PApplet.main(GooglyEyes.class.getName());
+	}
 }
