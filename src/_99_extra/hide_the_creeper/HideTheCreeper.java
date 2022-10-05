@@ -7,9 +7,16 @@ public class HideTheCreeper extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 400;
     PImage creeper; 
-    int reperX = 343;
-    int reperY = 123;
-   
+    int creeperX = 343;
+    int creeperY = 123;
+    boolean isNear(int a, int b) {
+    	if (abs(a - b) < 10)
+    	     return true;
+    	else
+    	     return false;
+    	}
+    
+    
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -26,12 +33,16 @@ public class HideTheCreeper extends PApplet {
 
     @Override
     public void draw() {
-    	image(creeper, reperX, reperY);
+    	
+    	image(creeper, creeperX, creeperY);
     	if(mousePressed) {
     		fill(255, 0, 0);
+    		if(isNear(creeperX, mouseX) == true && isNear(creeperY, mouseY) && mousePressed) {
+            	fill(0, 255,0);
+            }
     	ellipse(mouseX,mouseY,10,10);
     	}
-    	
+
     }
 
     static public void main(String[] args) {
